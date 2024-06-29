@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Navbar(props) {
+export default function Navbar({ title = "set title", Home = "Home", About = "About text" }) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            {props.title}
+            {title}
           </a>
           <button
             className="navbar-toggler"
@@ -23,12 +23,12 @@ export default function Navbar(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
-                  {props.Home}
+                  {Home}
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
-                  {props.About}
+                  {About}
                 </a>
               </li>
             </ul>
@@ -42,7 +42,6 @@ export default function Navbar(props) {
               <label
                 className="form-check-label"
                 htmlFor="flexSwitchCheckDefault"
-
               >
                 Enable dark mode
               </label>
@@ -53,13 +52,3 @@ export default function Navbar(props) {
     </div>
   );
 }
-Navbar.PropsTypes = {
-  title: String,
-  About: String,
-};
-
-Navbar.defaultProps = {
-  title: "set title",
-  Home: "Home",
-  About: "About text",
-};
